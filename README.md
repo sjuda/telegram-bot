@@ -79,3 +79,19 @@
 ### MacOS + CLion
 
 ### Ubuntu
+1. Откройте терминал
+1. Выполните команду `wget -O boost_1_59_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz/download`
+1. Выполните команду `tar xzvf boost_1_59_0.tar.gz`
+1. Выполните команду `cd boost_1_59_0/`
+1. Выполните команду `sudo apt-get update`
+1. Выполните команду `sudo apt-get install build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev`
+1. Выполните команду `./bootstrap.sh --prefix=/usr/`
+1. Выполните команду `./b2 threading=multi`
+1. Выполните команду `sudo ./b2 install`
+1. Выполните команду `sudo apt-get install g++ make binutils cmake libssl-dev libboost-dev git`
+1. Выполните команду `cd ~`
+1. Выполните команду `git clone https://github.com/reo7sp/tgbot-cpp.git`
+1. Выполните команду `cd ~/tgbot-cpp`
+1. Выполните команду `cmake .`
+1. Выполните команду `make -j4`
+1. Выполните команду `sudo make install`
