@@ -88,6 +88,8 @@
 1. Выполните команду `sudo cp libTgBot.a /usr/local/lib/`
 
 ### MacOS + XCode
+1. Не писать большие проекты на ++ в XCode
+1. Профит
 
 ### MacOS + CLion
 1. Открыть CLion
