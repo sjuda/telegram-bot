@@ -79,7 +79,7 @@
 1. Установите [brew](https://brew.sh/index_ru.html)
 1. Выполните команду `brew update`
 1. Выполните команду `brew install boost cmake make binutils git`
-1. Выполните команду `cd ${/PATH/TO/CLONE/ANYWHERE}`
+1. Выполните команду `cd ~`
 1. Выполните команду `git clone https://github.com/reo7sp/tgbot-cpp.git`
 1. Выполните команду `cd tgbot-cpp`
 1. Выполните команду `mkdir build && cd build`
