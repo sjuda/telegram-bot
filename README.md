@@ -92,7 +92,6 @@
 ### MacOS + CLion
 1. Открыть CLion
 1. Нажать `cmd + f9`
-1. Нажать `cmd + f9`
 1. Развернуть папку `cmake-build-debug`
 1. Запустить файл `echobot`
 
