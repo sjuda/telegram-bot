@@ -38,7 +38,7 @@
 1. Нажимаем на клавиатуре кнопку **F7**
 1. Ждем пока скомпилируется библиотека
 1. Запоминаем путь до скомпилированной библиотеки. В нашем случае это `C:\tgbot-cpp-master\Debug\TgBot.lib`
-1. Сongratulations!
+1. Congratulations!
 
 ### Windows + CLion
 1. Установите [7Zip](http://www.7-zip.org/)
@@ -72,11 +72,24 @@
 1. Нажимаем на клавиатуре кнопку **F7**
 1. Ждем пока скомпилируется библиотека
 1. Запоминаем путь до скомпилированной библиотеки. В нашем случае это `C:\tgbot-cpp-master\Debug\TgBot.lib`
-1. Сongratulations!
-
-### MacOS + XCode
+1. Congratulations!
 
 ### MacOS + CLion
+1. Откройте терминал
+1. Установите [brew](https://brew.sh/index_ru.html)
+1. Выполните команду `brew update`
+1. Выполните команду `brew install boost cmake make binutils git`
+1. Выполните команду `cd ~`
+1. Выполните команду `git clone https://github.com/reo7sp/tgbot-cpp.git`
+1. Выполните команду `cd tgbot-cpp`
+1. Выполните команду `mkdir build && cd build`
+1. Выполните команду `cmake .. && make -j4`
+1. Выполните команду `sudo make install`
+1. Выполните команду `sudo cp libTgBot.a /usr/local/lib/`
+1. Congratulations!
+
+Процесс установки на *Mac OS* способом, который показан ниже (но для *Ubuntu*), также возможен. Нужно лишь использовать пакетный менеджер не 
+`apt`, а `mac ports` или `brew`.
 
 ### Ubuntu
 1. Откройте терминал
