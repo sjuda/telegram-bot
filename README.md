@@ -74,7 +74,7 @@
 1. Запоминаем путь до скомпилированной библиотеки. В нашем случае это `C:\tgbot-cpp-master\Debug\TgBot.lib`
 1. Сongratulations!
 
-### MacOS (Общее)
+### MacOS + CLion
 1. Откройте терминал
 1. Установите [brew](https://brew.sh/index_ru.html)
 1. Выполните команду `brew update`
@@ -86,16 +86,6 @@
 1. Выполните команду `cmake .. && make -j4`
 1. Выполните команду `sudo make install`
 1. Выполните команду `sudo cp libTgBot.a /usr/local/lib/`
-
-### MacOS + XCode
-1. Не писать большие проекты на ++ в XCode
-1. Профит
-
-### MacOS + CLion
-1. Открыть CLion
-1. Нажать `cmd + f9` или нажать `run -> build`
-1. Развернуть папку `cmake-build-debug`
-1. Запустить файл `echobot`
 
 ### Ubuntu
 1. Откройте терминал
