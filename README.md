@@ -38,7 +38,7 @@
 1. Нажимаем на клавиатуре кнопку **F7**
 1. Ждем пока скомпилируется библиотека
 1. Запоминаем путь до скомпилированной библиотеки. В нашем случае это `C:\tgbot-cpp-master\Debug\TgBot.lib`
-1. Сongratulations!
+1. Congratulations!
 
 ### Windows + CLion
 1. Установите [7Zip](http://www.7-zip.org/)
@@ -72,7 +72,7 @@
 1. Нажимаем на клавиатуре кнопку **F7**
 1. Ждем пока скомпилируется библиотека
 1. Запоминаем путь до скомпилированной библиотеки. В нашем случае это `C:\tgbot-cpp-master\Debug\TgBot.lib`
-1. Сongratulations!
+1. Congratulations!
 
 ### MacOS + CLion
 1. Откройте терминал
@@ -86,6 +86,7 @@
 1. Выполните команду `cmake .. && make -j4`
 1. Выполните команду `sudo make install`
 1. Выполните команду `sudo cp libTgBot.a /usr/local/lib/`
+1. Congratulations!
 
 ### Ubuntu
 1. Откройте терминал
