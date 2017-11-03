@@ -88,6 +88,9 @@
 1. Выполните команду `sudo cp libTgBot.a /usr/local/lib/`
 1. Congratulations!
 
+Процесс установки на Mac OS способом, который показан ниже, также возможен. Нужно лишь использовать пакетный менеджер не 
+`apt`, а `mac ports` или `brew`.
+
 ### Ubuntu
 1. Откройте терминал
 1. Выполните команду `wget -O boost_1_59_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz/download`
