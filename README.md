@@ -77,6 +77,17 @@
 ### MacOS + XCode
 
 ### MacOS + CLion
+1. Откройте терминал
+1. Установите [brew](https://brew.sh/index_ru.html)
+1. Выполните команду `brew update`
+1. Выполните команду `brew install boost cmake make binutils git`
+1. Выполните команду `cd ${/PATH/TO/CLONE/ANYWHERE}`
+1. Выполните команду `git clone https://github.com/reo7sp/tgbot-cpp.git`
+1. Выполните команду `cd tgbot-cpp`
+1. Выполните команду `mkdir build && cd build`
+1. Выполните команду `cmake .. && make -j4`
+1. Выполните команду `sudo make install`
+1. Выполните команду `sudo cp libTgBot.a /usr/local/lib/`
 
 ### Ubuntu
 1. Откройте терминал
