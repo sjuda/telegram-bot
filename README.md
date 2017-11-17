@@ -6,7 +6,7 @@
 ### Windows + VisualStudio
 1. Установите [7Zip](http://www.7-zip.org/)
 1. Установите [CMake](https://cmake.org/download/)
-1. Установите [Perl](https://www.activestate.com/activeperl/downloads)
+1. Установите [Perl](https://www.activestate.com/activeperl/downloads). При установке поставьте галочку "Добавить в переменную окружения %PATH%"
 1. Скачайте искодные коды [OpenSLL](https://www.openssl.org/source/)
 1. Распакуйте OpenSLL. Например, в директорию `C:\openssl`
 1. Откройте консоль
