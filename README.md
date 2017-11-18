@@ -46,13 +46,7 @@
 1. Скачайте искодные коды [OpenSLL](https://www.openssl.org/source/)
 1. Распакуйте OpenSLL. Например, в директорию `C:\openssl`
 1. Откройте консоль
-1. Выполните команду `cd C:\openssl`
-1. Выполните команду `perl Configure VC-WIN32 no-asm --prefix=C:\openssl-x32-build`
-1. Выполните команду `ms\do_ms`
-1. ?? *тут надо что-то поменять*
-1. Выполните команду `nmake -f ms\nt.mak`
-1. Выполните команду `nmake -f ms\nt.mak install`
-1. ??
+1. Выполните инструкцию http://wiki.qt.io/Compiling_OpenSSL_with_MinGW, используя MSYS
 1. Скачайте [boost](http://www.boost.org/users/download/)
 1. Распакуйте boost. Например, в директорию `C:\boost`
 1. Откройте консоль
