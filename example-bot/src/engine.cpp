@@ -8,6 +8,12 @@ using namespace std;
 using namespace TgBot;
 using namespace Utils;
 
+// Функция вызывается каждый раз, когда приходит сообщение, которое начинается со /photo
+// В ответ пользователю придет сообщение с картинкой
+void onCommandPhoto(Bot& bot, Message::Ptr message)
+{
+    bot.getApi().sendPhoto(message->chat->id, InputFile::fromFile("0.jpg", "image/jpeg"));
+}
 
 // Функция для демонстрации работы с командами
 // Функция вызывается каждый раз, когда приходит сообщение, которое начинается со /start
@@ -33,7 +39,8 @@ std::map<std::string, std::function<void(Bot&, Message::Ptr)>> getAllCommands()
     {
         {"start", onCommandStart},
         {"end", onCommandEnd},
-        {"keyboard", onCommandKeyboard}
+        {"keyboard", onCommandKeyboard},
+        {"photo", onCommandPhoto}
     };
 
     return commands;
@@ -53,6 +60,10 @@ void onAnyMessage(Bot& bot, Message::Ptr message)
         return;
     }
     if (StringTools::startsWith(message->text, "/end"))
+    {
+        return;
+    }
+    if (StringTools::startsWith(message->text, "/photo"))
     {
         return;
     }
