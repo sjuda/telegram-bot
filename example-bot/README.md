@@ -26,9 +26,6 @@
 
 ### MacOS
 1. Откройте терминал
-1. Установите [brew](https://brew.sh/index_ru.html)
-1. Выполните команду `brew update`
-1. Выполните команду `brew install boost cmake make binutils git`
 1. Выполните команду `cd ~`
 1. Выполните команду `git clone https://github.com/bmstu-iu8-11-cpp-2017/homework-telegram-bot.git`
 1. Выполните команду `cd homework-telegram-bot/example-bot`
