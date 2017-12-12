@@ -46,3 +46,38 @@
 1. Выполните команду `cmake .. && make -j4`
 1. Создаем файл `token.cfg` и записываем в него токен вашего бота
 1. Запускаем приложение. Бот работает.
+
+### Ubuntu x64
+Открыть терминал
+```bash
+wget -O boost_1_59_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz/download
+tar xzvf boost_1_59_0.tar.gz
+cd ~/boost_1_59_0/
+sudo apt-get update
+sudo apt-get install build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev
+./bootstrap.sh --prefix=/usr/
+./b2 threading=multi
+sudo ./b2 install
+sudo apt-get install g++ make binutils cmake libssl-dev git
+```    
+Перезапустить терминал
+```bash
+cd ~
+git clone https://github.com/reo7sp/tgbot-cpp.git
+cd ~/tgbot-cpp/
+mkdir build 
+cd build/
+cmake ..
+make -j4
+sudo make install
+cd ~
+git clone https://github.com/bmstu-iu8-11-cpp-2017/homework-telegram-bot.git
+cd ~/homework-telegram-bot/example-bot/
+mkdir build 
+cd build/
+```
+Заменить содержимое `~/homework-telegram-bot/example-bot/CMakeLists.txt` на содержимое по ссылке [CMakeLists.txt](https://gist.github.com/drewxa/5822a73a5d599494fbf964543e704716)
+```bash
+cmake ..
+make -j4
+```
