@@ -62,26 +62,166 @@ gamma new_gamma(unsigned char key[4])
 	return gw;
 }
 gamma g = new_gamma((unsigned char*)"228");
-unsigned char encryption(unsigned char str[4], gamma g)
+unsigned char encryption(unsigned char *str1, gamma g)
 {
 	unsigned char cipher[4];
-	*cipher = *str ^ *g.state;
-	int f = 1;
-	int r = *cipher & f;
-	r = r << 7;
-	*cipher = *cipher << 1;
-	*cipher |= r;
-	return *cipher;
+	unsigned char str[4];
+	int size = 0;
+	for (int i = 0; str1[i] != 0; i++) size++;
+	if (!(size % 4))
+	{
+		int sz = size;
+		while (sz)
+		{
+		for (int i = 0; i < 4; i++)str[i] = str1[i];
+		sz -= 4;
+		*cipher += *str ^ *g.state;
+		int f = 1;
+		int r = *cipher & f;
+		r = r << 7;
+		*cipher = *cipher << 1;
+		*cipher |= r;
+		return *cipher;
+		}
+	}
+	else if(size % 4)
+	{
+		int sz = size;
+		while (sz > 3)
+		{
+			for (int i = 0; i < 4; i++)str[i] = str1[size - sz + i];
+			sz -= 4;
+			*cipher += *str ^ *g.state;
+			int f = 1;
+			int r = *cipher & f;
+			r = r << 7;
+			*cipher = *cipher << 1;
+			*cipher |= r;
+			return *cipher;
+		}
+		if (sz == 3)
+		{
+			str[1] = str1[size - sz + 1];
+			str[2] = str1[size - sz + 2];
+			str[3] = str1[size - sz + 3];
+			str[4] = 0;
+			*cipher += *str ^ *g.state;
+			int f = 1;
+			int r = *cipher & f;
+			r = r << 7;
+			*cipher = *cipher << 1;
+			*cipher |= r;
+			return *cipher;
+		}
+		if (sz == 2)
+		{
+			str[1] = str1[size - sz + 1];
+			str[2] = str1[size - sz + 2];
+			str[3] = 0;
+			str[4] = 0;
+			*cipher += *str ^ *g.state;
+			int f = 1;
+			int r = *cipher & f;
+			r = r << 7;
+			*cipher = *cipher << 1;
+			*cipher |= r;
+			return *cipher;
+		}
+		if (sz == 1)
+		{
+			str[1] = str1[size - sz + 1];
+			str[2] = 0;
+			str[3] = 0;
+			str[4] = 0;
+			*cipher += *str ^ *g.state;
+			int f = 1;
+			int r = *cipher & f;
+			r = r << 7;
+			*cipher = *cipher << 1;
+			*cipher |= r;
+			return *cipher;
+		}
+	}
 }
-unsigned char decryption(unsigned char str[4], gamma g)
+unsigned char decryption(unsigned char *str1, gamma g)
 {
-	int f = 1;
-	int r = *str & f;
-	r = r << 7;
-	*str = *str << 1;
-	*str |= r;
-	*str = *str ^ *g.state;
-	return *str;
+	unsigned char str[4];
+	int size = 0;
+	for (int i = 0; str1[i] != 0; i++) size++;
+	if (!(size % 4))
+	{
+		int sz = size;
+		while (sz)
+		{
+			for (int i = 0; i < 4; i++)str[i] = str1[i];
+			sz -= 4;
+			int f = 1;
+			int r = *str & f;
+			r = r << 7;
+			*str = *str << 1;
+			*str |= r;
+			*str = *str ^ *g.state;
+			return *str;
+		}
+	}
+	else if (size % 4)
+	{
+		int sz = size;
+		while (sz > 3)
+		{
+			for (int i = 0; i < 4; i++)str[i] = str1[size - sz + i];
+			sz -= 4;
+			int f = 1;
+			int r = *str & f;
+			r = r << 7;
+			*str = *str << 1;
+			*str |= r;
+			*str = *str ^ *g.state;
+			return *str;
+		}
+		if (sz == 3)
+		{
+			str[1] = str1[size - sz + 1];
+			str[2] = str1[size - sz + 2];
+			str[3] = str1[size - sz + 3];
+			str[4] = 0;
+			int f = 1;
+			int r = *str & f;
+			r = r << 7;
+			*str = *str << 1;
+			*str |= r;
+			*str = *str ^ *g.state;
+			return *str;
+		}
+		if (sz == 2)
+		{
+			str[1] = str1[size - sz + 1];
+			str[2] = str1[size - sz + 2];
+			str[3] = 0;
+			str[4] = 0;
+			int f = 1;
+			int r = *str & f;
+			r = r << 7;
+			*str = *str << 1;
+			*str |= r;
+			*str = *str ^ *g.state;
+			return *str;
+		}
+		if (sz == 1)
+		{
+			str[1] = str1[size - sz + 1];
+			str[2] = 0;
+			str[3] = 0;
+			str[4] = 0;
+			int f = 1;
+			int r = *str & f;
+			r = r << 7;
+			*str = *str << 1;
+			*str |= r;
+			*str = *str ^ *g.state;
+			return *str;
+		}
+	}
 }
 void onAnyMessage(Bot& bot, Message::Ptr message)
 {
