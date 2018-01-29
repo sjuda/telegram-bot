@@ -76,28 +76,31 @@ unsigned char encryption(unsigned char *str1, gamma g)
 		for (int i = 0; i < 4; i++)str[i] = str1[i];
 		sz -= 4;
 		*cipher += *str ^ *g.state;
+		}
 		int f = 1;
 		int r = *cipher & f;
 		r = r << 7;
 		*cipher = *cipher << 1;
 		*cipher |= r;
 		return *cipher;
-		}
 	}
 	else if(size % 4)
 	{
 		int sz = size;
+		if(sz>3)
+		{
 		while (sz > 3)
 		{
 			for (int i = 0; i < 4; i++)str[i] = str1[size - sz + i];
 			sz -= 4;
 			*cipher += *str ^ *g.state;
-			int f = 1;
-			int r = *cipher & f;
-			r = r << 7;
-			*cipher = *cipher << 1;
-			*cipher |= r;
-			return *cipher;
+		}
+		int f = 1;
+		int r = *cipher & f;
+		r = r << 7;
+		*cipher = *cipher << 1;
+		*cipher |= r;
+		return *cipher;
 		}
 		if (sz == 3)
 		{
@@ -155,23 +158,26 @@ unsigned char decryption(unsigned char *str1, gamma g)
 		{
 			for (int i = 0; i < 4; i++)str[i] = str1[i];
 			sz -= 4;
-			int f = 1;
+		}
+		int f = 1;
 			int r = *str & f;
 			r = r << 7;
 			*str = *str << 1;
 			*str |= r;
 			*str = *str ^ *g.state;
 			return *str;
-		}
 	}
 	else if (size % 4)
 	{
 		int sz = size;
+		if(sz>3)
+		{
 		while (sz > 3)
 		{
 			for (int i = 0; i < 4; i++)str[i] = str1[size - sz + i];
 			sz -= 4;
-			int f = 1;
+		}
+		int f = 1;
 			int r = *str & f;
 			r = r << 7;
 			*str = *str << 1;
